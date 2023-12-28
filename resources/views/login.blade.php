@@ -127,13 +127,13 @@ span.psw {
 </head>
 <body>
 
-<h2>Modal Login Form</h2>
+<h2>Login Form</h2>
 
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/welcome" method="post">
+  <form class="modal-content animate" action="/home" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="img_avatar2.png" alt="Avatar" class="avatar">
