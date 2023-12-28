@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-});
+Route::view('/','welcome');
+Route::view('login','login');
+Route::view('tutor','tutor');
+
