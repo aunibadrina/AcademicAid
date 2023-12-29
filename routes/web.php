@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TutorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/','landing');
 Route::view('login','login');
-Route::view('tutor','tutor');
 Route::view('home','home');
+
+Route::get('/Tutor',[TutorController::class, 'index'])->name('tutor.index');
+Route::get('/Tutor/createS',[TutorController::class, 'createS'])->name('tutor.createS');
 

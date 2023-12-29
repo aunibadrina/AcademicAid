@@ -31,7 +31,7 @@ a:hover, a:active {
   background-color: red;
 }
 </style>
-<a href="login" target="_blank">This is a link</a>
+
 ​
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
