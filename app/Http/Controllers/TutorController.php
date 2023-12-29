@@ -10,7 +10,7 @@ class TutorController extends Controller
         return view('tutor.index');
     }
 
-    public function create(){
+    public function createS(){
         return view('tutor.createS');
     }
 }
