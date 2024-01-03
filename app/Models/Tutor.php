@@ -11,9 +11,9 @@ class Tutor extends Model
 
     protected $fillable = [
 
-        'usertype',
         'name',
-        'username',
+        'subject',
+        'time',
         'email',
     ];
 }

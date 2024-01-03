@@ -7,5 +7,47 @@
 </head>
 <body>
     <h1>Create Tutoring Session</h1>
+    <div>
+        @if ($errors->any())
+
+        <ul>
+            @foreach($errors-> all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+
+        @endif
+    </div>
+    <form method="post" action="{{route('Tutor.store')}}">
+        @csrf
+        @method('post')
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Name">
+        </div>
+
+        <br></br>
+
+        <div>
+            <label>Subject</label>
+            <input type="text" name="subject" placeholder="Subject">
+        </div>
+        <br></br>
+
+        <div>
+            <label>Time</label>
+            <input type="text" name="time" placeholder="Time">
+        </div>
+        <br></br>
+
+        <div>
+            <label>Email</label>
+            <input type="text" name="email" placeholder="Email">
+        </div>
+
+
+        <div>
+            <input type="submit" value="Create A New Tutoring Session" />       
+        </div>
 </body>
 </html>

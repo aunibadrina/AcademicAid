@@ -13,10 +13,7 @@ return new class extends Migration
     {
         Schema::create('tutor', function (Blueprint $table) {
             $table->id();
-            $table->string('usertype');
-            $table->string('name');
-            $table->string('username');
-            $table->string('email');
+            
             $table->timestamps();
         });
     }
