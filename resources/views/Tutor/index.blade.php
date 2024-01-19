@@ -4,8 +4,10 @@
   <head>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1,0, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <title>Tutor Dashboard</title>
 
@@ -19,7 +21,10 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+    
 <!--
+    
 
 TemplateMo 586 Scholar
 
@@ -247,6 +252,7 @@ https://templatemo.com/tm-586-scholar
         <div>
             <input type="submit" value="Create A New Tutoring Session" />       
         </div>
+    </form>
     </div>
   </div> 
 

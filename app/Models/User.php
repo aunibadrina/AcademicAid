@@ -20,7 +20,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone',
+        'address',
+        'profile_image',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -32,6 +36,21 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function student()
+    {
+        return $this->hasOne(Student::class);
+    }
+
+    public function tutor()
+    {
+        return $this->hasOne(Tutor::class);
+    }
+
+    public function is_admin()
+    {
+        return $this->role === 'admin';
+    }
 
     /**
      * The attributes that should be cast.

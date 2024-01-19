@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -26,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/auth/home';
 
     /**
      * Create a new controller instance.
@@ -37,4 +38,29 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->role === 'tutor') {
+            if ($user->is_approved) {
+                // Redirect tutors with approved accounts to DashboardT
+                return redirect()->route('Tutor.index');
+            } else {
+                // Tutor account is not approved, redirect to not-approved page
+                auth()->logout();
+                return redirect('/tutor-not-approved')->with('warning', 'Your tutor account is awaiting approval.');
+            }
+        }
+
+        // Redirect other roles to their respective pages
+        return redirect()->intended($this->redirectPath());
+    }
+
+    // app/Http/Controllers/Auth/LoginController.php
+
+    public function showTutorNotApproved()
+    {
+        return view('auth.tutor-not-approved');
+    }
+
 }

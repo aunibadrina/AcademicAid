@@ -16,4 +16,9 @@ class Tutor extends Model
         'time',
         'email',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

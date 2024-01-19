@@ -58,4 +58,45 @@ class TutorController extends Controller
         $dashboardT->delete();
         return redirect(route('Tutor.index'))->with('success', 'Session Deleted Succesfully');
     }
+
+
+
+
+    public function showApplicationForm()
+{
+    return view('tutor.apply');
+}
+
+public function submitApplication(Request $request)
+{
+   
+    
+    
+    // Add validation as needed
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email|unique:users,email',
+        'password' => 'required|string|min:8',
+        'resume' => 'required|mimes:pdf|max:2048'
+        // Add other fields as needed
+    ]);
+
+
+    // Upload the PDF file
+    $resumePath = $request->file('resume')->store('resumes', 'public');
+
+    // Create a new tutor (pending approval)
+    $user = new \App\Models\User();
+    $user->name = $request->input('name');
+    $user->email = $request->input('email');
+    $user->password = bcrypt($request->input('password'));
+    $user->resume_path = $resumePath;
+    $user->role = 'tutor';
+    $user->save();
+
+    // Additional logic like sending a confirmation email or storing additional tutor information can be added here
+
+    return redirect('/')->with('success', 'Tutor application submitted. Wait for admin approval.');
+}
+
 }

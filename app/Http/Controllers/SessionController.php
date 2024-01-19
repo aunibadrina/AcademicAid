@@ -27,7 +27,7 @@ class SessionController extends Controller
 
         $newtutoringsession= tutoringsession::create($data);
 
-        return redirect(route('session.index'));
+        return redirect(route('admin.home'));
     }
 
     public function edit(tutoringsession $session ){
@@ -45,12 +45,12 @@ class SessionController extends Controller
 
         $session->update($data);
 
-        return redirect(route('session.index'))->with('success', 'Session Updated Succesfully');
+        return redirect(route('admin.home'))->with('success', 'Session Updated Succesfully');
     }
 
     public function destroy(tutoringsession $session ){
         $session->delete();
-        return redirect(route('session.index'))->with('success', 'Session Deleted Succesfully');
+        return redirect(route('admin.home'))->with('success', 'Session Deleted Succesfully');
     }
 
 }
