@@ -88,6 +88,11 @@ Route::post('/auth/approve-tutor/{id}', [AdminController::class, 'approveTutor']
 
 Route::get('/tutor-not-approved', [LoginController::class, 'showTutorNotApproved'])->name('tutor-not-approved');
 
+Route::get('/userList', [App\Http\Controllers\Auth\HomeController::class, 'userList'])->name('userList');  //user list page
+Route::get('/userList/{user}/edit',[App\Http\Controllers\Auth\HomeController::class, 'editUser'])->name('admin.editUser'); //edit user
+Route::put('/userList/{user}/update',[App\Http\Controllers\Auth\HomeController::class, 'updateUser'])->name('updateUser'); //user update
+Route::delete('/userList/{user}/destroy',[App\Http\Controllers\Auth\HomeController::class, 'destroyUser'])->name('destroyUser'); //delete user
+
 
 
 

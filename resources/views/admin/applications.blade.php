@@ -2,13 +2,16 @@
 
 @section('content')
 <br></br>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
                 <div class="card">
-                    <div class="card-header">{{ __('Tutor Applications') }}</div>
+                    <div class="card-header">
+                        <h3 class="card-title" style="margin-top: 4px;">{{ __('Tutor Applications') }}  </h3>               
+                    </div>
 
-                    <div class="card-body">
+                    <div class="card-body table-responsive p-0">
                         @if(session('success'))
                             <div class="alert alert-success">
                                 {{ session('success') }}
@@ -51,4 +54,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

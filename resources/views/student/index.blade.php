@@ -66,9 +66,7 @@ https://templatemo.com/tm-586-scholar
                       
                       
                       <li class="scroll-to-section"><a href="#team">Tutors</a></li>
-                      <li class="scroll-to-section"><a href="{{route('student.schedule')}}">Sessions</a></li>
-                      <li class="scroll-to-section"><a href="{{route('userProfile')}}">Profile</a></li>
-                        
+                      <li class="scroll-to-section"><a href="{{route('student.schedule')}}">Sessions</a></li>                        
                       @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
@@ -82,13 +80,14 @@ https://templatemo.com/tm-586-scholar
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+                            <li class="nav-item dropdown" style="margin-top: -8px;">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" style="color: #000;" href="{{ route('userProfile') }}">{{ __('User Profile') }}</a>    
+                                    <a class="dropdown-item" style="color: #000;" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -121,13 +120,10 @@ https://templatemo.com/tm-586-scholar
               <div class="header-text">
                 <span class="category">Our Courses</span>
                 <h2>With Scholar Teachers, Everything Is Easier</h2>
-                <p>Scholar is free CSS template designed by TemplateMo for online educational related websites. This layout is based on the famous Bootstrap v5.3.0 framework.</p>
+                <p>Our dedicated educators provide the guidance and support needed for your academic success.</p>
                 <div class="buttons">
                   <div class="main-button">
-                    <a href="#">Request Demo</a>
-                  </div>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-play"></i> What's Scholar?</a>
+                    <a href="login">Book Session</a>
                   </div>
                 </div>
               </div>
@@ -136,13 +132,10 @@ https://templatemo.com/tm-586-scholar
               <div class="header-text">
                 <span class="category">Best Result</span>
                 <h2>Get the best result out of your effort</h2>
-                <p>You are allowed to use this template for any educational or commercial purpose. You are not allowed to re-distribute the template ZIP file on any other website.</p>
+                <p>Unlock your full potential and achieve your best result with our tutors, crafted to provide expert guidance and continuous support for your journey.</p>
                 <div class="buttons">
                   <div class="main-button">
-                    <a href="#">Request Demo</a>
-                  </div>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-play"></i> What's the best result?</a>
+                    <a href="login">Book Session</a>
                   </div>
                 </div>
               </div>
@@ -151,13 +144,10 @@ https://templatemo.com/tm-586-scholar
               <div class="header-text">
                 <span class="category">Online Learning</span>
                 <h2>Online Learning helps you save the time</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod temporious incididunt ut labore et dolore magna aliqua suspendisse.</p>
+                <p>Embrace Efficiency: Online Learning Unleashes Time-Saving Benefits for Your Educational Journey.</p>
                 <div class="buttons">
                   <div class="main-button">
-                    <a href="#">Request Demo</a>
-                  </div>
-                  <div class="icon-button">
-                    <a href="#"><i class="fa fa-play"></i> What's Online Course?</a>
+                    <a href="login">Book Session</a>
                   </div>
                 </div>
               </div>
@@ -167,11 +157,6 @@ https://templatemo.com/tm-586-scholar
       </div>
     </div>
   </div>
-
-  
-
-
-
 
   <div class="section fun-facts">
     <div class="container">
@@ -232,35 +217,33 @@ https://templatemo.com/tm-586-scholar
     </div>
   </div> 
 
-
-
   <div class="section testimonials">
     <div class="container">
       <div class="row">
         <div class="col-lg-7">
           <div class="owl-carousel owl-testimonials">
             <div class="item">
-              <p>“Please tell your friends or collegues about TemplateMo website. Anyone can access the website to download free templates. Thank you for visiting.”</p>
+              <p style="text-align: justify;">“Academic Aid has been a game-changer for me. As an engineering student, finding qualified tutors who understand the intricacies of my subjects was crucial. The tutors here not only met but exceeded my expectations. The personalized approach and flexibility in scheduling have made my learning journey smoother and more enjoyable.”</p>
               <div class="author">
                 <img src="assets/images/testimonial-author.jpg" alt="">
-                <span class="category">Full Stack Master</span>
-                <h4>Claude David</h4>
+                <span class="category">Engineering Student</span>
+                <h4>Sarah K.</h4>
               </div>
             </div>
             <div class="item">
-              <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid.”</p>
+              <p style="text-align: justify;">“Academic Aid is a treasure for social sciences students like me. The range of subjects offered and the adaptability of the tutors to different academic levels are commendable. The platform's user-friendly interface and the dedication of the tutors have significantly contributed to my academic success.”</p>
               <div class="author">
-                <img src="assets/images/testimonial-author.jpg" alt="">
-                <span class="category">UI Expert</span>
-                <h4>Thomas Jefferson</h4>
+                <img src="assets/images/testimonial-author2.jpg" alt="">
+                <span class="category">Social Sciences Major</span>
+                <h4>Emily L.</h4>
               </div>
             </div>
             <div class="item">
-              <p>“Scholar is free website template provided by TemplateMo for educational related websites. This CSS layout is based on Bootstrap v5.3.0 framework.”</p>
+              <p style="text-align: justify;">“Being passionate about computer science, I was thrilled to discover Academic Aid. The tutors, who are students and lecturers from UTM, have an in-depth understanding of the subject. The interactive tools and live sessions allowed me to clarify doubts in real-time, making my learning experience highly effective.”</p>
               <div class="author">
-                <img src="assets/images/testimonial-author.jpg" alt="">
-                <span class="category">Digital Animator</span>
-                <h4>Stella Blair</h4>
+                <img src="assets/images/testimonial-author3.jpg" alt="">
+                <span class="category">Computer Science Enthusiast</span>
+                <h4>Raj M</h4>
               </div>
             </div>
           </div>
@@ -269,57 +252,7 @@ https://templatemo.com/tm-586-scholar
           <div class="section-heading">
             <h6>TESTIMONIALS</h6>
             <h2>What they say about us?</h2>
-            <p>You can search free CSS templates on Google using different keywords such as templatemo portfolio, templatemo gallery, templatemo blue color, etc.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="contact-us section" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6  align-self-center">
-          <div class="section-heading">
-            <h6>Contact Us</h6>
-            <h2>Feel free to contact us anytime</h2>
-            <p>Thank you for choosing our templates. We provide you best CSS templates at absolutely 100% free of charge. You may support us by sharing our website to your friends.</p>
-            <div class="special-offer">
-              <span class="offer">off<br><em>50%</em></span>
-              <h6>Valide: <em>24 April 2036</em></h6>
-              <h4>Special Offer <em>50%</em> OFF!</h4>
-              <a href="#"><i class="fa fa-angle-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="contact-us-content">
-            <form id="contact-form" action="" method="post">
-              <div class="row">
-                <div class="col-lg-12">
-                  <fieldset>
-                    <input type="name" name="name" id="name" placeholder="Your Name..." autocomplete="on" required>
-                  </fieldset>
-                </div>
-                <div class="col-lg-12">
-                  <fieldset>
-                    <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your E-mail..." required="">
-                  </fieldset>
-                </div>
-                <div class="col-lg-12">
-                  <fieldset>
-                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
-                  </fieldset>
-                </div>
-                <div class="col-lg-12">
-                  <fieldset>
-                    <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
-                  </fieldset>
-                </div>
-              </div>
-            </form>
+            <p style="text-align: justify;">Discover the impact of Academic Aid through the inspiring stories of students like Sarah K. and Ray M. Their testimonials reveal why Academic Aid is the preferred choice for those seeking excellence in online learning.</p>
           </div>
         </div>
       </div>
@@ -329,7 +262,7 @@ https://templatemo.com/tm-586-scholar
   <footer>
     <div class="container">
       <div class="col-lg-12">
-        <p>Copyright Muhammad Afnan &nbsp;&nbsp;&nbsp; Group 1</p>
+        <p>Copyright &nbsp;&nbsp;&nbsp; Academic Aid &nbsp;&nbsp;&nbsp; Group 1</p>
       </div>
     </div>
   </footer>
@@ -342,6 +275,12 @@ https://templatemo.com/tm-586-scholar
   <script src="assets/js/owl-carousel.js"></script>
   <script src="assets/js/counter.js"></script>
   <script src="assets/js/custom.js"></script>
+  <!-- Popper.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+
+  <!-- Bootstrap JavaScript (Popper.js is required for dropdowns) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
 
   </body>
 </html>

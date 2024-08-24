@@ -111,7 +111,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="{{ url('/auth/home') }}" class="nav-link">
               <i class="nav-icon fas fa-home"></i>
               <p>
                 Dashboard
@@ -126,11 +126,20 @@
               </p>
             </a>
           </li>
+          <li class="nav-header">Users</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-cog"></i>
+            <a href="{{ route('userList') }}" class="nav-link">
+              <i class="nav-icon fas fa-list-alt"></i>
               <p>
-                Settings            
+                User Lists           
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/auth/tutor-applications" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Tutor Applications          
               </p>
             </a>
           </li>
@@ -158,5 +167,12 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+<!-- Popper.js -->
+<!-- Popper.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+
+<!-- Bootstrap JavaScript (Popper.js is required for dropdowns) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

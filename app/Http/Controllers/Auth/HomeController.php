@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Validator;
 use App\Models\tutoringsession;
+use App\Models\User;
  
 class HomeController extends Controller
 {
@@ -77,5 +78,38 @@ class HomeController extends Controller
             'profile_image' => $profile_image ?? auth()->user()->profile_image 
         ]);
         return response()->json(['code' => 200, 'msg' => 'profile updated successfully.']);
+    }
+
+    public function userList()
+    {
+        $User = User::all();
+        return view('admin.layouts.userList', [
+            'User' => $User
+        ]);
+    }
+
+   
+
+    //CRUD USER
+    public function editUser(User $user ){
+        return view('admin.editUser', ['user' => $user]);
+    }
+
+    public function updateUser(User $user, Request $request){
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required '
+
+        ]);
+
+        $user->update($data);
+
+        return redirect('/userList')->with('success', 'User Updated Succesfully');
+    }
+
+    public function destroyUser(User $user){
+        $user->delete();
+        return redirect('/userList')->with('success', 'User Deleted Succesfully');
     }
 }

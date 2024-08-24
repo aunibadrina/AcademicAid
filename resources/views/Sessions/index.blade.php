@@ -6,19 +6,19 @@
 
 
 
-<main class="py-4">
-<div>
-    <h1>Tutoring Session</h1>
-</div>
-
-    <div>
-        
+<section class="content">
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <!-- center column -->
+        <div class="col-md-6 text-center text-uppercase"><BR>
+          <!-- Your text goes here -->
+          <h1>Tutoring Session</h1>  
+        </div>
             <div class="container mt-5">
                 <table id="myTable" border="1">
-                <thead>
+                  <thead>
 
-                    <tr>
-                        
+                    <tr>                     
                         <th>Name</th>
                         <th>Subject</th>
                         <th>Time</th>
@@ -29,8 +29,7 @@
                     <tbody>
 
                     @foreach($tutoringsession as $tutoringsession)
-                        <tr>
-                            
+                        <tr>                    
                             <td>{{$tutoringsession->name}}</td>
                             <td>{{$tutoringsession->subject}}</td>
                             <td>{{$tutoringsession->time}}</td>
@@ -49,29 +48,25 @@
                         </tr>
                     @endforeach
                      </tbody>
-                 </thead>
-
+                  </thead>
                 </table>
-            </div>
                 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
                 <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"> </script>
                 <script>
                     let table = new DataTable('#myTable');
                 </script>
-
+        <div>
     </div>
-</div>
-        </main>
 </div>
 
 <main class="py-4">
   <section class="content">
       <div class="container-fluid">
-        <div class="row">
+        <div class="row justify-content-center">
           <!-- left column -->
           <div class="col-md-6">
             <!-- general form elements -->
-            <div class="card card-primary">
+            <div class="card card">
               <div class="card-header">
                 <h3 class="card-title">Create Tutoring Session</h3>
               </div>
@@ -102,8 +97,8 @@
                   </div>
                 </div>
 
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="card-footer d-flex justify-content-center">
+                  <button type="submit" class="btn btn-outline-dark">Submit</button>
                 </div>
               </form>
             </div>
